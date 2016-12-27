@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+<title>Datos.pe</title>
+<script src="jquery.js"></script>
+</head>
+<body bgcolor="#FFF">
+<table width="100%" border="1"  bordercolor="NAVY"><tbody><tr><td colspan="9" bgcolor="#004080" align="CENTER" ><font face="KLINGBOLD" color="WHITE" size="12"> Datos.pe</font><br/>
+<font face="KLINGBOLD" color="WHITE" size="2"> Los datos precisos del futbol peruano</font>
+</td></tr>
+</tbody></table>
+<style type="text/css">
+#button {
+margin:0;
+padding: 0;
+}
+#button li {
+display: inline;
+}
+#button li a {
+font-family: Arial;
+font-size:35.00px;
+text-decoration: none;
+float:left;
+padding: 8px;
+background-color:#fff;
+color: #000;
+align:center;
+}
+#button li a:hover {
+background-color: #2586d7;
+}
+</style>
+<ul id="button"align="center" ><li ><a href="Datos.pe.html"> Inicio </a></li>
+<li><a href="noticias.html">Noticias</a></li>
+<li><a href="estadisticas.html">Estadisticas</a></li>
+<li><a href="partidos_vivo.html">Partidos en Vivo</a></li>
+<li><a href="pronosticos.html">Pronosticos</a></li>
+<li><a href="trivia.html" > Trivia </a></li>
+<li><a href="programacion.html"> Programacion </a></li>
+</ul> <br/>
+<ul id="button" align="center" ><li><a href="alianza_atletico.html"> <img src="club1.jpg"height="80px" width="67px" alt=""/> </a></li>
+<li><a href="alianza_lima.html"><img src="club2.png"height="80px" width="55px" alt=""/></a></li>
+<li><a href="ayacucho.html"><img src="club4.png"height="80px" width="67px" alt=""/></a></li>
+<li><a href="comerciantes_unidos.html"><img src="club3.png"height="80px" width="67px" alt=""/></a></li>
+<li><a href="deportivo_bocana.html"><img src="club5.png"height="80px" width="67px" alt=""/></a></li>
+<li><a href="deportivo_municipal.html" > <img src="club6.png"height="80px" width="67px" alt=""/></a></li>
+<li><a href="juan_aurich.html"><img src="club7.jpg"height="80px" width="67px" alt=""/></a></li>
+<li><a href="melgar.html"><img src="Melgar.png"height="80px" width="50px" alt=""/></a></li>
+<li><a href="union_comercio.html"><img src="club9.jpg"height="80px" width="60px" alt=""/></a></li>
+<li><a href="cesar_vallejo.html"><img src="club10.png"height="80px" width="60px" alt=""/></a></li>
+<li><a href="san_martin.html"><img src="club11.png"height="80px" width="67px" alt=""/></a></li>
+<li><a href="sport_huancayo.html"><img src="club12.png"height="80px" width="60px" alt=""/></a></li>
+<li><a href="utc.html"><img src="club14.png"height="80px" width="60px" alt=""/></a></li>
+<li><a href="real_garcilazo.html"><img src="club16.png"height="80px" width="50px" alt=""/></a></li>
+<li><a href="sporting_cristal.html"><img src="club13.jpg"height="80px" width="50px" alt=""/></a></li>
+<li><a href="universitario.html"><img src="club15.jpg"height="80px" width="65px" alt=""/></a></li>
+</ul> <br/>  <table width="100%" heigth="90px" border="1" align="center" bordercolor="NAVY"><tbody><tr><td colspan="3" bgcolor="#004080" align="CENTER" ><font face="KLINGBOLD" color="WHITE" size="10">Trivia</font>
+<font face="KLINGBOLD" color="black" size="6" >
+</font>
+</td></tr>
+</tbody>
+<td><img src="trivia1.jpg" width="400px" height="300px"  alt=""/></td>
+<td colspan="0"   bgcolor="#004080" width="453px"  border="1"  align="CENTER" ><font face="KLINGBOLD" color="WHITE" size="6">
+<style type="text/cdd" media="all">
+#boton 
+{
+background:url() no-repeat;
+boder:none;
+width:260px;
+height:260px
+}
+</style>
+	<div id="pregunta"></div>
+	<div id="respuestas"></div>
+
+<button type="button" size="8" value="Comprobar" id="boton" onclick="comprobar()" value="Jugar" style="background-color:#004080;color:#fff;size:8" alt="Compruebe su Respuesta"><img src="pelota.jpg" width="30px" height="30px"  />
+</button>
+	<script>
+		var preguntas = [
+		"¿Cuantos años lleva el club Alianza Lima sin obtener un Campeonato Nacional?",
+		"¿En que año campeono por ultima vez el club Universitario de Deportes?",
+		"¿En que año el club Deportivo Municipal volvio a ascender a la primera division?",
+                "¿Que Club gano el Campeonato Nacional el año 2011?",
+                 "¿Que año gano por segunda vez el Campeonato Nacional el FBC Melgar ?"
+		];
+		var respuestas = [
+		["9 años", "8 años", "6 años", "7 años"],
+		["2013", "2014", "2015", "2012"],
+		["2014", "2015", "2013", "2012"],
+                ["Juan Aurich", "Alianza Lima", "U. San Martin", "Sporting Cristal"],
+                ["2015", "2014", "2013", "2012"],
+                
+
+		];
+jugar();
+
+		var indicie_respuesta_correcta;
+
+function jugar(){
+			var indice_aleatorio = Math.floor(Math.random()*preguntas.length);
+
+
+		var respuestas_posibles = respuestas[indice_aleatorio];
+
+
+		var posiciones = [0,1,2,3];
+		var respuestas_reordenadas = [];
+
+		var ya_se_metio = false;
+		for(i in respuestas_posibles){
+			var posicion_aleatoria = Math.floor(Math.random()*posiciones.length);
+			if(posicion_aleatoria==0 && ya_se_metio == false){
+				indicie_respuesta_correcta =i;
+				ya_se_metio = true;
+			}
+			respuestas_reordenadas[i] = respuestas_posibles[posiciones[posicion_aleatoria]];
+			posiciones.splice(posicion_aleatoria, 1);
+		}
+
+		var txt_respuestas="";
+		for(i in respuestas_reordenadas){
+			txt_respuestas += '<input type="radio" name="pp" value="'+i+'"><label>'+respuestas_reordenadas[i]+'</label><br>';
+		}
+
+		document.getElementById("respuestas").innerHTML = txt_respuestas;
+		document.getElementById("pregunta").innerHTML = preguntas[indice_aleatorio];
+
+}
+function comprobar(){
+	var respuesta = $("input[type=radio]:checked").val();
+
+	//alert(respuesta);
+	//alert(indicie_respuesta_correcta);
+	if(respuesta ==indicie_respuesta_correcta){
+		alert("Respuesta Correcta");
+	}else{
+		alert("Fallaste");
+
+	}
+	jugar();
+}
+	</script>
+</font>
+<font face="KLINGBOLD" color="black" size="6" >
+</font>
+</td><td><img src="trivia3.jpg" width="400px" height="300px"  alt=""/></td></tr>
+</tbody></table>
+
+</body>
+</html>
